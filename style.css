@@ -1,0 +1,22 @@
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+    padding: 20px;
+    background: url('https://i.pinimg.com/originals/42/27/14/422714811966e27f52f89c6c6784ca47.jpg');
+    margin: auto 0;
+    color: white;
+}
+#subtitulo-formulario{
+    text-align: center;
+}
+#formulario{
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+.btn{
+    margin: 5px 20px;
+    width: 200px;
+    border-radius: 20px;
+    border-color: white
+}
