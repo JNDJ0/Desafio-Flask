@@ -2,25 +2,36 @@
     <head>
         <title>Login</title>
         <meta charset = 'utf-8'>
-        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" href = "https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap">
         <link rel = 'stylesheet' href = '../static/bootstrap_css/bootstrap.min.css' media = 'screen'>
         <link rel = 'stylesheet' href = '../static/style.css'>
     </head>
     <body>
         <div class="container">
             <h1 style = "display: inline">JND páginas</h1>
-            <button type = "button" class = "btn btn-success" onclick = "location.href = '/';">Página principal</button>
+            <button type = "button" class = "btn btn-success" onclick = "location.href = '/welcome';">Página principal</button>
+            <p>Para logar, coloque no nome <b>JND</b> e na senha <b>JNDsenha</b></p>
             <div id = 'formulario'>
                 <h2 id = 'subtitulo-formulario'>Login</h2>
                 <form action = "" method = "POST">
                     <div class = "form-group">
-                        <input type = "text" name = "username" class = "form-control" placeholder = "Nome" required>
+                        <input autofocus type = "text" name = "username" class = "form-control" placeholder = "Nome" required>
                     </div>
                     <div class="form-group">
                         <input type = "password" name = "password" class = "form-control" placeholder = "Senha" required>
                     </div>
                     <input class="btn btn-secondary" type = "submit" value = "Login" placeholder = "Login">
                 </form>
+                <div class = 'caixa-erro'>
+                    {% if error %}
+                        <p class="mensagem-erro"><strong>Erro:</strong> {{ error }} </p>
+                    {% endif %}
+                </div>
+                <div class = 'caixa-aviso'>
+                    {% for message in get_flashed_messages() %}
+                        <p class = 'mensagem-aviso'> {{ message }} </p>
+                    {% endfor %}
+                </div>
             </div>
         </div>
         <script src="bootstrap_js/jquery.js"></script>

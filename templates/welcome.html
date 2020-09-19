@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Login e Senha</title>
+        <meta charset = 'utf-8'>
+        <link rel = "stylesheet" href = "https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap">
+        <link rel = 'stylesheet' href = '../static/bootstrap_css/bootstrap.min.css' media = 'screen'>
+        <link rel = 'stylesheet' href = '../static/style.css'>
+    </head>
+    <body>
+        <div class = 'container'>
+            <h1>JND páginas</h1>
+            <p>Essa página foi criada com o intuito de produzir um formulário de login e registro, utilizando <i>Flask</i>, um framework Python para web.</p>
+            <p>Por enquanto, a página register não funciona e não existem logins personalizados, apenas um: <i>JND, JNDsenha</i></p>
+            <a class = "links-uteis" target = "_blank" href = "https://www.youtube.com/watch?v=BnBjhmspw4c&feature=youtu.be&ab_channel=MichaelHerman">Flask</a>
+            <div id = 'formulario'>
+                <h2>Clique no botão <b>login</b> para logar e <b>register</b> para registrar.</h2>
+                <button type = "button" class = "btn btn-primary" onclick = "location.href = 'login';">Login</button>
+                <button type = "button" class = "btn btn-danger"  onclick = "location.href = 'register';">Register</button>
+            </div>
+            <br>
+            <div class = 'caixa-sucesso'>
+                {% for message in get_flashed_messages() %}
+                    <p class = 'mensagem-sucesso'> {{ message }} </p>
+                {% endfor %}
+            </div>
+        </div>
+        <script src="bootstrap_js/jquery.js"></script>
+        <script src="bootstrap_js/bootstrap.min.js"></script>
+    </body>
+</html>

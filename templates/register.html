@@ -2,25 +2,25 @@
     <head>
         <title>Login</title>
         <meta charset = 'utf-8'>
-        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" href = "https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap">
         <link rel = 'stylesheet' href = '../static/bootstrap_css/bootstrap.min.css' media = 'screen'>
         <link rel = 'stylesheet' href = '../static/style.css'>
     </head>
     <body>
         <div class="container">
             <h1 style = "display: inline">JND páginas</h1>
-            <button type = "button" class = "btn btn-success" onclick = "location.href = '/';">Página principal</button>
+            <button type = "button" class = "btn btn-success" onclick = "location.href = '/welcome';">Página principal</button>
             <div id = 'formulario'>
                 <h2 id = 'subtitulo-formulario'>Register</h2>
                 <form action = "" method = "POST">
                     <div class = "form-group">
-                        <input type = "text" name = "nome" class = "form-control" placeholder = "Nome" required>
+                        <input autofocus type = "text" name = "username" class = "form-control" placeholder = "Nome" required>
                     </div>
                     <div class="form-group">
                         <input type = "email" name = "email" class = "form-control" placeholder = "Email" required>
                     </div>
                     <div class="form-group">
-                        <input type = "password" name = "senha" class = "form-control" placeholder = "Senha" required>
+                        <input type = "password" name = "password" class = "form-control" placeholder = "Senha" required>
                     </div>
                     <div class="form-group">
                         <input type = "password" name = "password" class = "form-control" placeholder = "Repita sua senha" required>

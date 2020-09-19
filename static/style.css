@@ -20,3 +20,27 @@ body{
     border-radius: 20px;
     border-color: white
 }
+.links-uteis{
+    color: white;
+}
+.mensagem-erro{
+    color: red;
+}
+.mensagem-sucesso{
+    color: green;
+}
+.mensagem-aviso{
+    color: yellow
+}
+.caixa-erro{
+    padding-left: 10px;
+    background-color: #ffcccb
+}
+.caixa-sucesso{
+    padding-left: 10px;
+    background-color: lightgreen;
+}
+.caixa-aviso{
+    padding-left: 10px;
+    background-color: lightyellow
+}
