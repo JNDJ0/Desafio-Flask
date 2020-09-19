@@ -1,5 +1,5 @@
-# Desafio-Flask
-Repositório contendo os arquivos para o desafio de python, estabelecido para entrar no estágio da PATREO. Feito por João Lucas Simões Moreira
+# Desafio Flask
+Este repositório contém os arquivos para o desafio de python, estabelecido para entrar no estágio da PATREO. Feito por João Lucas Simões Moreira, da turma 303.
 
 ## Tecnologias utilizadas
 HTML5, CSS3, Bootstrap, Flask
