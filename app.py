@@ -42,9 +42,22 @@ def logout():
     flash('Voce saiu da pagina!')
     return redirect(url_for('welcome'))
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
-    return render_template('register.html')
+    error = None
+    defaultUsername = 'username-doido'
+    defaultPassword = 'senha-doida'
+    if request.method == 'POST':
+        inputUsername = request.form.get('username', defaultUsername)
+        inputPassword = request.form.get('password', defaultPassword)
+        inputRepassword = request.form.get('repassword', defaultPassword)
+        if inputRepassword != inputPassword:
+            error = 'As senhas nao coincidem.'
+        else: 
+            flash('Cadastrado com sucesso!')
+    
+    return render_template('register.html', error=error)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
