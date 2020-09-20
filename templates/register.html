@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Login</title>
+        <title>Register</title>
         <meta charset = 'utf-8'>
         <link rel = "stylesheet" href = "https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap">
         <link rel = 'stylesheet' href = '../static/bootstrap_css/bootstrap.min.css' media = 'screen'>
@@ -17,16 +17,23 @@
                         <input autofocus type = "text" name = "username" class = "form-control" placeholder = "Nome" required>
                     </div>
                     <div class="form-group">
-                        <input type = "email" name = "email" class = "form-control" placeholder = "Email" required>
-                    </div>
-                    <div class="form-group">
                         <input type = "password" name = "password" class = "form-control" placeholder = "Senha" required>
                     </div>
                     <div class="form-group">
-                        <input type = "password" name = "password" class = "form-control" placeholder = "Repita sua senha" required>
+                        <input type = "password" name = "repassword" class = "form-control" placeholder = "Repita sua senha" required>
                     </div>
                 <button class = "btn btn-secondary" type = "submit">Enviar</button>
                 </form>
+                <div class = 'caixa-erro'>
+                    {% if error %}
+                        <p class="mensagem-erro"><strong>Erro:</strong> {{ error }} </p>
+                    {% endif %}
+                </div>
+                <div class = 'caixa-sucesso'>
+                    {% for message in get_flashed_messages() %}
+                        <p class = 'mensagem-sucesso'> {{ message }} </p>
+                    {% endfor %}
+                </div>
             </div>
         </div>
         <script src="bootstrap_js/jquery.js"></script>
