@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request, session, f
 from functools import wraps
 from flask_sqlalchemy import sqlalchemy, SQLAlchemy
 
-#puxando o banco de dados que é utilizado para guardar todos os dados registrados
+#puxando o banco de dados que eh utilizado para guardar todos os dados registrados
 db = SQLAlchemy()
 app = Flask(__name__)
 app.secret_key = 'jnd chave secreta'
@@ -51,11 +51,14 @@ def login():
         inputUsername = request.form.get('username')
         inputPassword = request.form.get('password')
 
-        #verificacao se o usuario inserido é de fato autentico
+        #verificacao se o usuario inserido eh de fato autentico
         login = users.query.filter_by(email=inputEmail).first()
         if not login.password == inputPassword:
             error = 'Senha invalida, tente novamente.'
+        elif not login:
+            error = 'Dados invalidos, tente novamente'
         else:
+            print(login.password)
             session['logged_in'] = True
             flash('Voce logou na pagina!')
             return redirect(url_for('home'))
