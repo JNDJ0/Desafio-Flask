@@ -15,5 +15,5 @@ Após baixar o projeto, **primeiro** modifique o caminho para o banco de dados n
 <br>
 <img src="https://github.com/JNDGitHub/Desafio-Flask/blob/master/images/registerflask.jpg" width="800px" height="auto">
 <br>
-<img src="https://github.com/JNDGitHub/Desafio-Flask/blob/master/images/indexflask.jpg" width="800px" height="auto">
+<img src="https://github.com/JNDGitHub/Desafio-Flask/blob/master/images/indexflasknew.jpg" width="800px" height="auto">
 <br>
