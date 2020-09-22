@@ -10,8 +10,8 @@
     <body>
         <div class = "container">
             <h1 style = "display: inline">JND páginas</h1>
-            <h2 style = "margin-top: 10px"> Bem vindo, {{ username }}! </h2>
             <button type = "button" class = "btn btn-success" onclick = "location.href = '/logout';">Deslogar</button>
+            <h2 style = "margin-top: 10px"> Bem vindo, {{ username }}! </h2>
             <p>Essa página aparece após um login bem sucedido, e não possui nada pois não era o ponto do desafio criar uma página pós login.</p>
             <div class = 'caixa-sucesso'>
                 {% for message in get_flashed_messages() %}
