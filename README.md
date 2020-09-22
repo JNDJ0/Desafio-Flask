@@ -7,6 +7,9 @@ As tecnologias de programação utilizadas foram HTML5, CSS3, Bootstrap e o Flas
 ## Como executar?
 Após baixar o projeto, **primeiro** modifique o caminho para o banco de dados no programa app.py, já que o caminho explicitado funciona somente na minha máquina. Após isso, basta que você rode o comando *python app.py*, com uma instância sendo criada no localhost(*localhost:5000*). Você pode cadastrar um novo usuário para entrar em uma página que apenas cadastrados possuem acesso. <br> *Detalhe*: se você tentar entrar direto na localhost:5000 sem ter cadastrado um usuário, você será redirecionado para a tela de login, sendo necessário logar primeiro para acessá-la.
 
+## Atenção para erros!
+Se ocorrer o seguinte erro: *AttributeError: 'NoneType' object has no attribute 'password'*, significa que o email que você tentou acessar não está cadastrado. Não consegui redirecionar esse erro para uma mensagem flash ou algo semelhante, porém não desespere: é normal. Ademais, outros erros aparecem em mensagens *flash*, como *Senha incorreta*, *Email já cadastrado*, etc.
+
 ## Imagens do projeto
 
 <img src="https://github.com/JNDGitHub/Desafio-Flask/blob/master/images/welcomeflask.jpg" width="800px" height="auto">
