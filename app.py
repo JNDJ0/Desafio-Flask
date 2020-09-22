@@ -5,9 +5,8 @@ from flask_sqlalchemy import sqlalchemy, SQLAlchemy
 #puxando o banco de dados que eh utilizado para guardar todos os dados registrados
 db = SQLAlchemy()
 app = Flask(__name__)
-app.secret_key = 'jnd chave secreta'
 app.config.update({
-    'SQLALCHEMY_DATABASE_URI': 'sqlite:///C:\\Users\\joaot\\Desktop\\Projeto\\bancodados.db',
+    'SQLALCHEMY_DATABASE_URI': 'sqlite:///C:\\Users\\joaot\\Desktop\\Escola\\TerceiroAno\\Projeto\\bancodados.db',
     'SQLALCHEMY_POOL_SIZE': None,
     'SQLALCHEMY_POOL_TIMEOUT': None
 })
@@ -35,7 +34,7 @@ def login_required(f):
 @app.route('/')
 @login_required
 def home():
-    return render_template('index.html')  
+    return render_template('index.html',username=request.args.get('username'))  
 
 #primeira pagina, onde existem 2 botoes: login e register
 @app.route('/welcome')
@@ -56,12 +55,12 @@ def login():
         if not login.password == inputPassword:
             error = 'Senha invalida, tente novamente.'
         elif not login:
-            error = 'Dados invalidos, tente novamente'
+            error = 'Email invalido, tente novamente'
         else:
             print(login.password)
             session['logged_in'] = True
             flash('Voce logou na pagina!')
-            return redirect(url_for('home'))
+            return redirect(url_for('home', username=login.username))
        
     return render_template('login.html', error=error)
 
@@ -83,16 +82,16 @@ def register():
     defaultPassword = 'senha-doida'
     if request.method == 'POST':
         inputUsername = request.form.get('username', defaultUsername)
-        inputEmail = request.form.get('email',defaulEmail)
+        inputEmail = request.form.get('email', defaulEmail)
         inputPassword = request.form.get('password', defaultPassword)
-        inputRepassword = request.form.get('repassword', defaultPassword)
+        confirmPassword = request.form.get('repassword', defaultPassword)
 
         #verificacao se o usuario ja existe e se as senhas sao iguais
         usuario = users.query.filter_by(email=inputEmail).first()
         if usuario:
             error = 'Email ja cadastrado!'
             return render_template('register.html', error=error)
-        if inputRepassword != inputPassword:
+        if confirmPassword != inputPassword:
             error = 'As senhas nao coincidem.'
         #criacao do usuario registrado
         else: 
@@ -103,6 +102,6 @@ def register():
     
     return render_template('register.html', error=error)
 
-
-if __name__ == '__main__':
+if __name__ == '__main__':    
+    app.secret_key = 'jnd chave secreta'
     app.run(debug=True)
