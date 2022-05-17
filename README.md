@@ -1,5 +1,5 @@
 # Desafio Flask
-Este repositório contém uma tela de login e register, com um banco de dados que guarda os usuários registrados. Feito por João Lucas Simões Moreira, da turma 303.
+Este repositório contém uma tela de login e register, com um banco de dados que guarda os usuários registrados. Feito por João Lucas Simões Moreira.
 
 ## Tecnologias utilizadas e descrição das pastas
 As tecnologias de programação utilizadas foram HTML5, CSS3, Bootstrap e o Flask, sendo este último um framework da linguagem Python. Na pasta **static**, estão localizados os códigos do Bootstrap e o arquivo *style.css*, que é utilizado nas quatro páginas. Já na pasta **templates** estão os códigos *.html*. Por fim, o arquivo *app.py*, que quando executado cria um servidor com esses *htmls* citados, está localizado acima dessas duas pastas.
